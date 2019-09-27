@@ -17,6 +17,7 @@ describe IntegerToHuman do
       context 'under 100' do
         it { expect(subject.to_human(20)).to eq 'twenty' }
         it { expect(subject.to_human(21)).to eq 'twenty-one' }
+        it { expect(subject.to_human(22)).to eq 'twenty-two' }
       end
     end
   end
