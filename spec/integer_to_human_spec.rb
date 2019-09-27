@@ -21,6 +21,11 @@ describe IntegerToHuman do
         it { expect(subject.to_human(56)).to eq 'fifty-six' }
         it { expect(subject.to_human(96)).to eq 'ninety-six' }
       end
+
+      context 'under 1000' do
+        it { expect(subject.to_human(100)).to eq 'one hundred' }
+        it { expect(subject.to_human(108)).to eq 'one hundred and eight' }
+      end
     end
   end
 end
