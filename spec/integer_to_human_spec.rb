@@ -18,6 +18,8 @@ describe IntegerToHuman do
         it { expect(subject.to_human(20)).to eq 'twenty' }
         it { expect(subject.to_human(21)).to eq 'twenty-one' }
         it { expect(subject.to_human(22)).to eq 'twenty-two' }
+        it { expect(subject.to_human(56)).to eq 'fifty-six' }
+        it { expect(subject.to_human(96)).to eq 'ninety-six' }
       end
     end
   end
