@@ -17,7 +17,7 @@ class IntegerToHuman
         SMALL[div] + " hundred" + (mod.zero? ? '' : " and #{to_human(mod)}")
       else
         div, mod = integer.divmod(1000)
-        SMALL[div] + " thousand" + (mod.zero? ? '' : " and #{to_human(mod)}")
+        to_human(div).gsub(' and', ' ') + ' thousand' + (mod.zero? ? '' : (mod < 100 ? ' and ' : ' ') + to_human(mod))
       end
     end
   end
