@@ -28,6 +28,10 @@ describe IntegerToHuman do
         it { expect(subject.to_human(145)).to eq 'one hundred and forty-five' }
         it { expect(subject.to_human(987)).to eq 'nine hundred and eighty-seven' }
       end
+
+      context 'under 1 million' do
+        it { expect(subject.to_human(1000)).to eq 'one thousand' }
+      end
     end
   end
 end
