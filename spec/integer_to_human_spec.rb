@@ -31,6 +31,7 @@ describe IntegerToHuman do
 
       context 'under 1 million' do
         it { expect(subject.to_human(1000)).to eq 'one thousand' }
+        it { expect(subject.to_human(2000)).to eq 'two thousand' }
       end
     end
   end
