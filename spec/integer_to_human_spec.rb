@@ -6,13 +6,18 @@ describe IntegerToHuman do
 
   context 'under 1000' do
     context 'aughts' do
-      it { expect(subject.to_human(0)).to eq 'zero' }
-      it { expect(subject.to_human(1)).to eq 'one' }
-      it { expect(subject.to_human(2)).to eq 'two' }
-      it { expect(subject.to_human(10)).to eq 'ten' }
-      it { expect(subject.to_human(19)).to eq 'nineteen' }
+      context 'unique' do
+        it { expect(subject.to_human(0)).to eq 'zero' }
+        it { expect(subject.to_human(1)).to eq 'one' }
+        it { expect(subject.to_human(2)).to eq 'two' }
+        it { expect(subject.to_human(10)).to eq 'ten' }
+        it { expect(subject.to_human(19)).to eq 'nineteen' }
+      end
+
+      context 'under 100' do
+        it { expect(subject.to_human(20)).to eq 'twenty' }
+        it { expect(subject.to_human(21)).to eq 'twenty-one' }
+      end
     end
   end
-
-
 end

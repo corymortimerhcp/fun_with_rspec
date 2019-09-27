@@ -5,7 +5,13 @@ class IntegerToHuman
             )
   class << self
     def to_human integer
-      SMALL[integer]
+      if integer < 20
+        SMALL[integer]
+      elsif integer < 21
+        'twenty'
+       else
+         'twenty-one'
+      end
     end
   end
 end
